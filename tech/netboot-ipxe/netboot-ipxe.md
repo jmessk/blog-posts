@@ -1,9 +1,9 @@
-——-
+---
 title: ネットワークブートによる OS のインストール
 description: OS をインストールするときは、毎回 ISO をダウンロードし USB メモリに焼くという手間がかかっていた。そこで、研究室と自宅ネットワークにネットワークブートができる環境をセットアップした。
-tags: [“netboot”, “pxe”, “ipxe”]
+tags: [netboot, pxe, ipxe]
 thumbnail_uri: https://ipxe.org/_media/screenshots/menu_graphic.png?cache=
-——-
+---
 
 ## 動機
 
