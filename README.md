@@ -1,5 +1,14 @@
 # Blog Posts
 
+This is a repository for managing blog posts with markdown files and images.
+
+**Application Repository**: <https://github.com/jmessk/blog>
+
+## Scripts
+
+- **Publish Post**: `publish_post.bash <category> <post-directory>`
+- **Update Post**: `update_post.bash <category> <post-directory>` (not implemented yet)
+
 ## API
 
 - `GET /api/posts/tags`
@@ -75,7 +84,7 @@
     Content-Type: multipart/form-data; boundary=boundary
 
     --boundary
-    Content-Disposition: form-data; name="post"
+    Content-Disposition: form-data; name="content"
     Content-Type: application/plaintext
 
     # New Post
@@ -98,6 +107,9 @@
         "registered_content": "# Test Post\n\nThis is a test post.",
     }
     ```
+
+    After recieving the response, `id` file is created in the same directory.
+    This file will be used in the `UPDATE` and `DELETE` requests.
 
 - `GET /api/posts/<post_id>`
 
@@ -173,12 +185,15 @@
 
 - `UPDATE /api/posts/<post_id>`
 
+    `<UUID>` is existing in the `id` file in the same directory.
+
     Request:
 
-    ```markdown
-    # New Post
-    
-    This is new post.
+    ```json
+    {
+        "id": "<UUID>",
+        "registered_content": "# New Post\n\nThis is updated post."
+    },
     ```
 
     Response:
@@ -187,7 +202,7 @@
     {
         "id": "<UUID>",
         "updated_at": "2023-10-01T12:00:00Z",
-        "registered_content": "# New Post\n\nThis is new post."
+        "registered_content": "# New Post\n\nThis is updated post."
     },
     ```
 

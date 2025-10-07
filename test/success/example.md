@@ -1,6 +1,7 @@
 ---
 title: "Test Post"
 description: "This is a test post."
+category: "test"
 tags: ["demo","curl"]
 thumbnail_uri: "image-a.png"
 ---
