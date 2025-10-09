@@ -12,8 +12,8 @@ if [[ -f "$env_file" ]]; then
 	set +a
 fi
 
-if [[ $# -lt 2 || $# -gt 3 ]]; then
-	echo "Usage: publish_post.bash <post-directory> <category> [token]" >&2
+if [[ $# -lt 1 ]]; then
+	echo "Usage: publish_post.bash <post-directory>" >&2
 	exit 1
 fi
 
@@ -23,8 +23,7 @@ if [[ -z "${BLOG_API_BASE_URL:-}" ]]; then
 fi
 
 post_path="$1"
-category="$2"
-auth_token="${3:-${BLOG_API_TOKEN:-}}"
+auth_token="${2:-${BLOG_API_TOKEN:-}}"
 
 if [[ ! -d "$post_path" ]]; then
 	echo "Directory not found: $post_path" >&2
@@ -44,7 +43,7 @@ if [[ -f "$post_path/id" ]]; then
 fi
 
 api_base="${BLOG_API_BASE_URL%/}"
-endpoint="${api_base}/api/posts?category=${category}"
+endpoint="${api_base}/api/posts"
 
 declare -a curl_args
 curl_args+=(--silent --show-error)
