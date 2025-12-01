@@ -6,8 +6,8 @@ This is a repository for managing blog posts with markdown files and images.
 
 ## Scripts
 
-- **Publish Post**: `publish_post.bash <category> <post-directory>`
-- **Update Post**: `update_post.bash <category> <post-directory>` (not implemented yet)
+- **Publish Post**: `publish_post.bash <post-directory>`
+- **Update Post**: `update_post.bash <post-directory>`
 
 ## API
 
