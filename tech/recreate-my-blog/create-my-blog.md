@@ -11,6 +11,8 @@ tags: [blog, markdown, next.js, cloudflare, opennextjs]
 
 なお、今回は [以前作ったブログ](https://jme-blog.vercel.app) の反省を活かして刷新した `v2.0` という位置付けである。
 
+ソースコード: <https://github.com/jmessk/blog>
+
 ## ブログを作る・書く意味
 
 1. **無限の時間を活用した技術力の向上**
